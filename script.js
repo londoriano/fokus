@@ -20,7 +20,6 @@ musica.loop = true
 let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
-
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0){
         somZero.play()
@@ -34,7 +33,6 @@ const contagemRegressiva = () => {
 
 startPauseBt.addEventListener('click', iniciarOuPausar)
 
-
 musicaFocoInput.addEventListener('change', () => {
     if (musica.paused) {
         musica.play()
@@ -42,7 +40,6 @@ musicaFocoInput.addEventListener('change', () => {
         musica.pause()
     }
 })
-
 
 focoBt.addEventListener('click', () => {
     tempoDecorridoEmSegundos = 1500
@@ -63,7 +60,7 @@ longoBt.addEventListener('click', () => {
 })
 
 function alterarContexto(contexto) {
-    
+
     if(intervaloId){
         imagPlayPause.setAttribute('src', '/imagens/play_arrow.png')
         somPausa.play()

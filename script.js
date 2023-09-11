@@ -21,9 +21,9 @@ let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
 const contagemRegressiva = () => {
-    if(tempoDecorridoEmSegundos <= 0){
+    if (tempoDecorridoEmSegundos <= 0) {
         somZero.play()
-        alert('Tempo Finalizado!')
+        // alert('Tempo Finalizado!')
         zerar()
         return
     }
@@ -61,7 +61,7 @@ longoBt.addEventListener('click', () => {
 
 function alterarContexto(contexto) {
 
-    if(intervaloId){
+    if (intervaloId) {
         imagPlayPause.setAttribute('src', '/imagens/play_arrow.png')
         somPausa.play()
         zerar()
@@ -97,8 +97,8 @@ function alterarContexto(contexto) {
     }
 }
 
-function iniciarOuPausar(){
-    if(intervaloId){
+function iniciarOuPausar() {
+    if (intervaloId) {
         imagPlayPause.setAttribute('src', '/imagens/play_arrow.png')
         somPausa.play()
         zerar()
@@ -111,14 +111,14 @@ function iniciarOuPausar(){
     iniciarOuPausarBt.textContent = 'Pausar'
 }
 
-function zerar(){
+function zerar() {
     clearInterval(intervaloId)
     intervaloId = null
 }
 
 function mostrarTempo() {
     const tempo = new Date(tempoDecorridoEmSegundos * 1000)
-    const tempoFormatado = tempo.toLocaleTimeString('pt-Br', {minute: '2-digit', second: '2-digit'})
+    const tempoFormatado = tempo.toLocaleTimeString('pt-Br', { minute: '2-digit', second: '2-digit' })
     tempoNaTela.innerHTML = `${tempoFormatado}`
 }
 mostrarTempo()
